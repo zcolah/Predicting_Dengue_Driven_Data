@@ -1,0 +1,59 @@
+plot_sj = knn_preds_week_sj.assign(residual=knn_preds_week_sj.Actual - knn_preds_week_sj.Predicted)
+sns.factorplot(x="year", y="residual", hue="city", size=8, aspect=3,data=knn_preds_week_sj)
+plt.title("Residuals")
+
+plot_d = dt_preds_week_iq.assign(residual=dt_preds_week_iq.Actual - dt_preds_week_iq .Predicted)
+sns.factorplot(x="year", y="residual", hue="city", size=8, aspect=3,data=plot_d)
+plt.title("Residuals")
+
+plt.subplots(figsize=(11,7))
+xgb_preds_week_sj = pd.DataFrame(test_features_sj)
+xgb_preds_week_sj['Actual'] = test_outcomes_sj.values
+xgb_preds_week_sj['Predicted'] = knr_preds_sj
+xgb_preds_week_sj = pd.merge(data_sj, xgb_preds_week_sj, left_index = True, right_index = True)
+xgb_preds_week_sj
+
+sns.lineplot(x='year', y=xgb_preds_week_sj.Actual - xgb_preds_week_sj.Predicted, data=xgb_preds_week_sj)
+
+
+
+sns.lineplot(x='year', y=dt_preds_week_sj.Actual - dt_preds_week_sj.Predicted, data=dt_preds_week_sj)
+
+plt.subplots(figsize=(11,7))
+rf_preds_week_sj = pd.DataFrame(test_features_sj)
+rf_preds_week_sj['Actual'] = test_outcomes_sj.values
+rf_preds_week_sj['Predicted'] = knr_preds_sj
+rf_preds_week_sj = pd.merge(data_sj, rf_preds_week_sj, left_index = True, right_index = True)
+rf_preds_week_sj
+
+sns.lineplot(x='year', y=rf_preds_week_sj.Actual - rf_preds_week_sj.Predicted, data=rf_preds_week_sj)
+
+plt.subplots(figsize=(11,7))
+
+
+sns.lineplot(x='year', y=knn_preds_week_iq.Actual - knn_preds_week_iq.Predicted, data=knn_preds_week_iq, color='red')
+
+plt.subplots(figsize=(11,7))
+
+
+sns.lineplot(x='year', y=xgb_preds_week_iq.Actual - xgb_preds_week_iq.Predicted, data=xgb_preds_week_iq, color='red')
+
+plt.subplots(figsize=(11,7))
+dt_preds_week_iq = pd.DataFrame(test_features_iq)
+dt_preds_week_iq['Actual'] = test_outcomes_iq.values
+dt_preds_week_iq['Predicted'] = dt_preds_iq
+dt_preds_week_iq = pd.merge(data_iq, dt_preds_week_iq, left_index = True, right_index = True)
+dt_preds_week_iq
+
+sns.lineplot(x='year', y=dt_preds_week_iq.Actual - dt_preds_week_iq.Predicted, data=dt_preds_week_iq, color='red')
+
+
+
+plt.subplots(figsize=(11,7))
+rf_preds_week_iq = pd.DataFrame(test_features_iq)
+rf_preds_week_iq['Actual'] = test_outcomes_iq.values
+rf_preds_week_iq['Predicted'] = rf_preds_iq
+rf_preds_week_iq = pd.merge(data_iq, rf_preds_week_iq, left_index = True, right_index = True)
+rf_preds_week_iq
+
+sns.lineplot(x='year', y=rf_preds_week_iq.Actual - rf_preds_week_iq.Predicted, data=rf_preds_week_iq, color='red')

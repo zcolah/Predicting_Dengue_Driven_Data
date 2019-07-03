@@ -1,0 +1,39 @@
+plt.subplots(figsize=(11,7))
+sns.lineplot(x='year', y=knn_preds_week_sj.Actual, data=knn_preds_week_sj)
+sns.lineplot(x='year', y=knn_preds_week_sj.Predicted, data=knn_preds_week_sj)
+
+
+plt.subplots(figsize=(11,7))
+sns.lineplot(x='year', y=xgb_preds_week_sj.Actual, data=xgb_preds_week_sj)
+sns.lineplot(x='year', y=xgb_preds_week_sj.Predicted, data=xgb_preds_week_sj)
+
+
+plt.subplots(figsize=(11,7))
+sns.lineplot(x='year', y=dt_preds_week_sj.Actual, data=dt_preds_week_sj)
+sns.lineplot(x='year', y=dt_preds_week_sj.Predicted, data=dt_preds_week_sj)
+
+
+plt.subplots(figsize=(11,7))
+sns.lineplot(x='year', y=rf_preds_week_sj.Actual, data=rf_preds_week_sj)
+sns.lineplot(x='year', y=rf_preds_week_sj.Predicted, data=rf_preds_week_sj)
+
+
+
+plt.subplots(figsize=(11,7))
+sns.lineplot(x='year', y=knn_preds_week_iq.Actual, data=knn_preds_week_iq)
+sns.lineplot(x='year', y=knn_preds_week_iq.Predicted, data=knn_preds_week_iq)
+
+
+plt.subplots(figsize=(11,7))
+sns.lineplot(x='year', y=xgb_preds_week_iq.Actual, data=xgb_preds_week_iq)
+sns.lineplot(x='year', y=xgb_preds_week_iq.Predicted, data=xgb_preds_week_iq)
+
+
+plt.subplots(figsize=(11,7))
+sns.lineplot(x='year', y=dt_preds_week_iq.Actual, data=dt_preds_week_iq)
+sns.lineplot(x='year', y=dt_preds_week_iq.Predicted, data=dt_preds_week_iq)
+
+
+plt.subplots(figsize=(11,7))
+sns.lineplot(x='year', y=rf_preds_week_iq.Actual, data=rf_preds_week_iq)
+sns.lineplot(x='year', y=rf_preds_week_iq.Predicted, data=rf_preds_week_iq)
